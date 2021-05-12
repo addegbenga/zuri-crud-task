@@ -1,11 +1,11 @@
-require('dotenv').config();
+require("dotenv").config();
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-
-    //input your db url in .env file 
-    const conn = await mongoose.connect("mongodb+srv://addegbenga:samson@14@adeyemi.lqnhw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { //  MONGO_URI
+    //input your db url in .env file
+    const conn = await mongoose.connect(process.env.DB_URI, {
+      //  MONGO_URI
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,
